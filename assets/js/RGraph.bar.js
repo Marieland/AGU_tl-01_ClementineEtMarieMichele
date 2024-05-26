@@ -85,7 +85,7 @@
             marginBottom:          35,
             marginLeft:            35,
             marginRight:           35,
-            marginInner:           5,
+            marginInner:           10,
             marginInnerGrouped:   1,
             
             labelsIngraph:        null,
@@ -163,8 +163,8 @@
             yaxisTitleAccessible:     null,
 
             xaxis:                   true,
-            xaxisLinewidth:          1,
-            xaxisColor:              'black',
+            xaxisLinewidth:          2,
+            xaxisColor:              '#8C4A32',
             xaxisTickmarks:          true,
             xaxisTickmarksLength:    3,
             xaxisTickmarksLastLeft:  null,

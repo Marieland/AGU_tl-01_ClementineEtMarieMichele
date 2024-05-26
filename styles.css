@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Quicksand:wght@300..700&display=swap');
+
+
 :root {
     --darkgreen: #72A603;
     --lightgreen: #C5D930;
@@ -5,4 +9,26 @@
     --brown: #592316;
     --grey: #D9D9D9;
     --box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: #592316;
+}
+
+
+@media screen and (min-width: 768px) {
+    
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
