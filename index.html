@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js" defer></script>
+    
+   
+  
     <title>Document</title>
 </head>
 <body>
@@ -12,20 +15,37 @@
         <h1></h1>
         <nav>
             <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
         </nav>
     </header>
     <main>
-
+        <div class="oven_temp">
+            <div style="float: right; text-align: center">
+                <canvas id="cvs" width="500" height="250">[No canvas support]</canvas><br />
+                <button onclick="toggleGradient()" style="font-size: 20pt">Toggle gradient</button>
+            </div>
+        </div>
+        <div class=""></div>
+        <div class="svg"></div>
+        <div class="svg"></div>
+        <div class="barres verticales ou horizontales"></div>
+        <div class="semi-circulaire"></div>
+        
     </main>
     <footer>
 
     </footer>
+
+
+    <script src="./assets/js/RGraph.common.core.js"></script><!--a customised meter chart-->
+    <script src="./assets/js/RGraph.common.dynamic.js"></script><!--a customised meter chart-->
+    <script src="./assets/js/RGraph.meter.js"></script><!--a customised meter chart-->
+    
 </body>
 </html>

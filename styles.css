@@ -1,0 +1,42 @@
+
+/* Color Theme Swatches in Hex 
+.chocolate-fondant-1-hex { color: #72A603; }
+.chocolate-fondant-2-hex { color: #C5D930; }
+.chocolate-fondant-3-hex { color: #8C4A32; }
+.chocolate-fondant-4-hex { color: #592316; }
+.chocolate-fondant-5-hex { color: #D9D9D9; }
+
+Color Theme Swatches in RGBA 
+.chocolate-fondant-1-rgba { color: rgba(114, 165, 3, 1); }
+.chocolate-fondant-2-rgba { color: rgba(197, 216, 47, 1); }
+.chocolate-fondant-3-rgba { color: rgba(140, 74, 50, 1); }
+.chocolate-fondant-4-rgba { color: rgba(89, 34, 22, 1); }
+.chocolate-fondant-5-rgba { color: rgba(216, 216, 216, 1); }
+
+ Color Theme Swatches in HSLA 
+.chocolate-fondant-1-hsla { color: hsla(78, 96, 33, 1); }
+.chocolate-fondant-2-hsla { color: hsla(67, 68, 51, 1); }
+.chocolate-fondant-3-hsla { color: hsla(16, 47, 37, 1); }
+.chocolate-fondant-4-hsla { color: hsla(11, 59, 21, 1); }
+.chocolate-fondant-5-hsla { color: hsla(0, 0, 85, 1); }*
+*/
+
+body{
+    background-color: #D9D9D9;
+}
+
+header{
+    background-color: #72A603; ;
+}
+
+ul{
+    list-style: none;
+}
+
+@media screen and(min-width:768px) {
+    
+}
+
+@media screen and(min-width:1024px) {
+    
+}
