@@ -21,39 +21,42 @@
         </nav>
     </header>
     <main>
+
         <div id="temp" class="temperature">
             <h2>Préchauffez le four à:</h2>
-            <canvas id="cvs" width="500" height="250">[No canvas support]</canvas><br />
+            <canvas id="cvs-1" width="500" height="250"></canvas>
             <button onclick="toggleGradient()" style="font-size: 20pt">Température</button>
         </div>
-        
         
         <div id="chart-container" class="ingredients">
             <h2>Préparez vos ingredients</h2>
         </div>
 
-
-        <section>
+        <div id="coeur-coulant">
             <div>
                 <h2>Choix du coeur coulant...</h2>
-                <canvas id="cvs" width="600" height="400"></canvas>
+                <canvas id="cvs-2" width="600" height="400"></canvas>
             </div>
-        </section>
+        </div>
+
+        
 
         <script src="./assets/js/RGraph.common.core.js"></script>
+        <script src="./assets/js/RGraph.common.core.js"></script><!--a customised meter chart-->
+        <script src="./assets/js/RGraph.common.dynamic.js"></script><!--a customised meter chart-->
+        <script src="./assets/js/RGraph.meter.js"></script><!--a customised meter chart-->
+        <script src="./assets/js/RGraph.svg.common.core.js"></script><!--pie chart api-->
+        <script src="./assets/js/RGraph.svg.common.sheets.js"></script><!--pie chart api-->
+        <script src="./assets/js/RGraph.svg.pie.js"></script><!--pie chart api-->
         <script src="./assets/js/RGraph.bar.js"></script>
     </main>
+
     <footer>
 
     </footer>
 
 
-    <script src="./assets/js/RGraph.common.core.js"></script><!--a customised meter chart-->
-    <script src="./assets/js/RGraph.common.dynamic.js"></script><!--a customised meter chart-->
-    <script src="./assets/js/RGraph.meter.js"></script><!--a customised meter chart-->
-    <script src="./assets/js/RGraph.svg.common.core.js"></script><!--pie chart api-->
-    <script src="./assets/js/RGraph.svg.common.sheets.js"></script><!--pie chart api-->
-    <script src="./assets/js/RGraph.svg.pie.js"></script><!--pie chart api-->
+    
     
 </body>
 </html>

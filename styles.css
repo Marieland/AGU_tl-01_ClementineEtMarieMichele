@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Quicksand:wght@300..700&display=swap');
 
 
@@ -19,7 +18,7 @@ main {
 }
 
 body{
-    background-color:  #8C4A32;
+    background-color:  #ffffff;
 }
 
 header{
@@ -39,14 +38,7 @@ a{
     text-decoration: none;
 }
 
-
-.temperature{
-    float: right;
-    text-align: center;
-}
-
 #chart-container{
-    float: right;
     width: 650px;
     height: 300px;
 }
@@ -65,7 +57,7 @@ a{
     main {
         grid-template-columns: repeat(3, 1fr);
     }
-
+}
 
 
 
