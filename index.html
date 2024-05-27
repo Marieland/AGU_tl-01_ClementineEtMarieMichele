@@ -14,8 +14,8 @@
         <h1></h1>
         <nav>
             <ul>
-                <li><a href="#">section1</a></li>
-                <li><a href="#">section2</a></li>
+                <li><a href="#temp">Température du four</a></li>
+                <li><a href="#chart-container">Ingrédients requis</a></li>
                 <li><a href="#">section3</a></li>
                 <li><a href="#">section4</a></li>
                 <li><a href="#">section5</a></li>
@@ -24,20 +24,23 @@
         </nav>
     </header>
     <main>
-        <div class="oven_temp">
+        <div id="temp" class="temperature">
+            <h2>Préchauffez le four à:</h2>
             <canvas id="cvs" width="500" height="250">[No canvas support]</canvas><br />
             <button onclick="toggleGradient()" style="font-size: 20pt">Température</button>
         </div>
         
         
-        <div id="chart-container"> </div>
+        <div id="chart-container" class="ingredients">
+            <h2>Préparez vos ingredients</h2>
+        </div>
 
         
        
-        <div class="svg"></div>
+        <div class=""></div>
         <div class="svg"></div>
         <div class="barres verticales ou horizontales"></div>
-        <div class="semi-circulaire"></div>
+        <div class=""></div>
         
     </main>
     <footer>

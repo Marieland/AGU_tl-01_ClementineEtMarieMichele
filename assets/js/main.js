@@ -89,20 +89,20 @@
 
 /*Graphique pour les ingrédients, pie chart api svg*/
     
-    data = [40,90,120,100,3,];
+    data = [40,90,100,120,3,];
 
     new RGraph.SVG.Pie({
         id: 'chart-container',
         data: data,
         options: {
-            labels: ['farine','beurre','sucre','chocolat noir','oeufs',],
+            labels: ['farine','beurre','chocolat noir','sucre','oeufs',],
             shadow: true,
             colorsStroke: 'rgba(216,216,216,1)',
             linewidth: 2,
             exploded: [,,25],
-            colors: ['#f#D9D9D9','#592316','#8C4A32','#C5D930','#72A603'],
+            colors: ['#D9D9D9','#592316','#8C4A32','#C5D930','#72A603'],
             tooltips: '%{key}',
-            tooltipsFormattedKeyLabels: ['farine','beurre','sucre','chocolat noir','oeufs',],
+            tooltipsFormattedKeyLabels: ['farine','beurre','chocolat noir','sucre','oeufs',],
             tooltipsFormattedUnitsPost: '%',
             tooltipsCss: {
                 backgroundColor: '#333',

@@ -22,32 +22,39 @@ Color Theme Swatches in RGBA
 */
 
 body{
-    background-color: #D9D9D9;
+    background-color:  #8C4A32;
 }
 
 header{
-    background-color: #72A603; ;
+    background-color:#C5D930;
+    padding: 1rem;
 }
 
 ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:1rem;
     list-style: none;
-
 }
 
 a{
     text-decoration: none;
 }
 
-.oven_temp{
+
+.temperature{
     float: right;
     text-align: center;
 }
 
 #chart-container{
+    float: right;
     width: 650px;
-     height: 300px;
-     float: right;
+    height: 300px;
 }
+
+
 
 
 @media screen and(min-width:768px) {
