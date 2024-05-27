@@ -164,7 +164,7 @@
     // being no labels on the left-hand-side the margin autofit
     // will make the left margin zero
     new RGraph.HBar({
-        id: 'chocolat',
+        id: 'cvs',
         data: [11,10.9,10.8,10,7.3,6,4,2.3,2, 2],
         options: {
             textSize: 14,
