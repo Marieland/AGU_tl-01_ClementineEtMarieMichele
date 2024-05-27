@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "rgraph": "^0.1.12",
+    "vite": "^5.2.11"
+  }
+}

@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Quicksand:wght@300..700&display=swap');
 
 
@@ -17,6 +18,39 @@ main {
     color: #592316;
 }
 
+body{
+    background-color:  #8C4A32;
+}
+
+header{
+    background-color:#C5D930;
+    padding: 1rem;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:1rem;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.temperature{
+    float: right;
+    text-align: center;
+}
+
+#chart-container{
+    float: right;
+    width: 650px;
+    height: 300px;
+}
+
 
 @media screen and (min-width: 768px) {
     
@@ -31,4 +65,10 @@ main {
     main {
         grid-template-columns: repeat(3, 1fr);
     }
-}
+
+
+
+
+
+
+
