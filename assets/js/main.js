@@ -37,7 +37,7 @@
             ]
         }
     }).draw();
-=======
+
 /*Graphique pour la température du four, .oven_temp*/ 
 
     defaultColors = [
@@ -151,4 +151,67 @@
             }
         }
     }).draw();
+
+
+    /*Graphique chocolat par pays*/
+
+   
+    // The labels for the chart are not added by giving them to the
+    // chart but manually adding text to the chart.
+    labels = ['Allemagne','Belgique','Suisse','Royaume-Uni','France','États-unis','Italie','Japon','Espagne', 'Russie'];
+
+    // Create the Horizontal Bar chart and configure it. With there
+    // being no labels on the left-hand-side the margin autofit
+    // will make the left margin zero
+    new RGraph.HBar({
+        id: 'chocolat',
+        data: [11,10.9,10.8,10,7.3,6,4,2.3,2, 2],
+        options: {
+            textSize: 14,
+            backgroundGrid: false,
+            xaxis: false,
+            yaxis: false,
+            xaxisScale: false,
+            labelsAbove: true,
+            labelsAboveUnitsPost: 'kg',
+            colors: [ '#8C4A32'],
+            shadow: true,
+            shadowColor: '#ddd',
+            shadowOffsetx: 2,
+            shadowOffsety: 2,
+            tooltips: '<i style="position: relative; top: -5px">Usage worldwide:</i> <span style="font-size: 26pt; ">%{value}%',
+            tooltipsCss: {
+                fontSize: '14pt'
+            },
+            highlightFill: 'Gradient(rgba(255,255,255,0):white)',
+            highlightStroke: 'Gradient(rgba(255,255,255,0):white)',
+            responsive: [
+                {maxWidth: null,width:600,height: 350,parentCss:{'float':'right', textAlign:'none'}},
+                {maxWidth: 800,width:400,height: 300,parentCss:{'float':'none', textAlign:'center'}}
+            ]
+        }
+    
+    // Use the draw event to add the labels on the left-hand-side
+    }).on('draw', function (obj)
+    {
+        var coords = obj.coords;
+
+        // Loop through the coordinates of the bars
+        for (var i=0; i<coords.length; ++i) {
+        
+            // For each of the coordinates add a text label
+            // on the left-hand-side of the bar
+            RGraph.text({
+                object: obj,
+                text:   labels[i],
+                x:      coords[i][0] + 10,
+                y:      coords[i][1] + (coords[i][3] / 2),
+                valign: 'center',
+                bold:   true,
+                color:  'white',
+                size: obj.get('textSize')
+            });
+        }
+    }).grow();
+
 

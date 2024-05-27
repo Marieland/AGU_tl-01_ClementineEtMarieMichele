@@ -12,19 +12,21 @@
     --box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    color: #592316;
-}
+
 
 body{
-    background-color:  #8C4A32;
+    background-color:  var(--grey);
 }
 
 header{
     background-color:#C5D930;
     padding: 1rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: #592316;
 }
 
 ul{
@@ -41,16 +43,19 @@ a{
 
 
 .temperature{
-    float: right;
+   
     text-align: center;
 }
 
 #chart-container{
-    float: right;
+    
     width: 650px;
     height: 300px;
 }
 
+#chocolat{
+  float:left;
+}
 
 @media screen and (min-width: 768px) {
     
@@ -65,9 +70,4 @@ a{
     main {
         grid-template-columns: repeat(3, 1fr);
     }
-
-
-
-
-
-
+}

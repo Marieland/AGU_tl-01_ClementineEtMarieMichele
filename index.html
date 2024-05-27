@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <script src="./assets/js/main.js" defer></script>
+    <title>Le mi-cuit au chocolat</title>
 </head>
+
 <body>
     <header>
         <h1>Le mi-cuit au chocolat</h1>
@@ -13,47 +16,66 @@
             <ul>
                 <li><a href="#temp">Température du four</a></li>
                 <li><a href="#chart-container">Ingrédients requis</a></li>
-                <li><a href="#">section3</a></li>
-                <li><a href="#">section4</a></li>
+                <li><a href="#heart">Choix du coeur coulant</a></li>
+                <li><a href="#chocolat">Quantité de chocolat par pays</a></li>
                 <li><a href="#">section5</a></li>
                 <li><a href="#">section6</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div id="temp" class="temperature">
-            <h2>Préchauffez le four à:</h2>
-            <canvas id="cvs" width="500" height="250">[No canvas support]</canvas><br />
-            <button onclick="toggleGradient()" style="font-size: 20pt">Température</button>
-        </div>
-        
-        
-        <div id="chart-container" class="ingredients">
-            <h2>Préparez vos ingredients</h2>
-        </div>
-
+        <section>
+            <div id="temp" class="temperature">
+                <h2>Préchauffez le four à:</h2>
+                <canvas id="cvs" width="500" height="250">[No canvas support]</canvas><br />
+                <button onclick="toggleGradient()" style="font-size: 20pt">Température</button>
+            </div>
+        </section>
 
         <section>
-            <div>
+            <div id="chart-container" class="ingredients">
+                <h2>Préparez vos ingredients</h2>
+            </div>
+        </section>
+
+        <section>
+            <div id="heart">
                 <h2>Choix du coeur coulant...</h2>
                 <canvas id="cvs" width="600" height="400"></canvas>
             </div>
         </section>
 
+        <section>
+            <div id="chocolat">
+                <h2>La consommation de chocolat à travers le monde</h2>
+                <canvas id="chocolat" width="600" height="350">[No canvas support]</canvas>
+                <blockquote>
+                    <p>Les Allemands sont les plus gros mangeurs de chocolat au monde. Chaque année, chaque habitant
+                        consomment plus de 11 kilogrammes, selon les chiffres du Syndicat du chocolat. Ils sont suivis
+                        par la Suisse, avec une ingurgitation de 9,7 kg par habitant chaque année, puis de l’Estonie
+                        (8,8 kg).</p>
+                        <cite><a href="https://www.bfmtv.com/economie/noir-ou-au-lait-ce-que-represente-la-consommation-du-chocolat-en-chiffres-a-travers-le-monde_AN-201910300033.html#:~:text=Les%20Allemands%20sont%20les%20plus,(8%2C8%20kg).">NOIR OU AU LAIT? CE QUE REPRÉSENTE LA CONSOMMATION DU CHOCOLAT, EN CHIFFRES, À TRAVERS LE MONDE</a></cite>
+                </blockquote>
+            </div>
+        </section>
+
+
         <script src="./assets/js/RGraph.common.core.js"></script>
         <script src="./assets/js/RGraph.bar.js"></script>
+        <script src="./assets/js/RGraph.common.dynamic.js"></script><!--a customised meter chart-->
+        <script src="./assets/js/RGraph.meter.js"></script><!--a customised meter chart-->
+        <script src="./assets/js/RGraph.svg.common.core.js"></script><!--pie chart api-->
+        <script src="./assets/js/RGraph.svg.common.sheets.js"></script><!--pie chart api-->
+        <script src="./assets/js/RGraph.svg.pie.js"></script><!--pie chart api-->
+        <script src="./assets/js/RGraph.common.tooltips.js"></script><!--horizontal bar chart-->
+        <script src="./assets/js/RGraph.hbar.js"></script><!--horizontal bar chart-->
     </main>
     <footer>
 
     </footer>
 
 
-    <script src="./assets/js/RGraph.common.core.js"></script><!--a customised meter chart-->
-    <script src="./assets/js/RGraph.common.dynamic.js"></script><!--a customised meter chart-->
-    <script src="./assets/js/RGraph.meter.js"></script><!--a customised meter chart-->
-    <script src="./assets/js/RGraph.svg.common.core.js"></script><!--pie chart api-->
-    <script src="./assets/js/RGraph.svg.common.sheets.js"></script><!--pie chart api-->
-    <script src="./assets/js/RGraph.svg.pie.js"></script><!--pie chart api-->
-    
+
 </body>
+
 </html>
