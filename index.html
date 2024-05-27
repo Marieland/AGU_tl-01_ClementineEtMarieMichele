@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <script src="./assets/js/main.js" defer></script>
-    
-    <title>Le mi-cuit au chocolat</title>
-
 </head>
 <body>
     <header>
-        <h1></h1>
+        <h1>Le mi-cuit au chocolat</h1>
         <nav>
             <ul>
                 <li><a href="#temp">Température du four</a></li>
@@ -35,13 +32,16 @@
             <h2>Préparez vos ingredients</h2>
         </div>
 
-        
-       
-        <div class=""></div>
-        <div class="svg"></div>
-        <div class="barres verticales ou horizontales"></div>
-        <div class=""></div>
-        
+
+        <section>
+            <div>
+                <h2>Choix du coeur coulant...</h2>
+                <canvas id="cvs" width="600" height="400"></canvas>
+            </div>
+        </section>
+
+        <script src="./assets/js/RGraph.common.core.js"></script>
+        <script src="./assets/js/RGraph.bar.js"></script>
     </main>
     <footer>
 
