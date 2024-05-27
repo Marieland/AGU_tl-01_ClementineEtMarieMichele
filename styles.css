@@ -31,12 +31,24 @@ header{
 
 ul{
     list-style: none;
+
+}
+
+a{
+    text-decoration: none;
 }
 
 .oven_temp{
     float: right;
     text-align: center;
 }
+
+#chart-container{
+    width: 650px;
+     height: 300px;
+     float: right;
+}
+
 
 @media screen and(min-width:768px) {
     

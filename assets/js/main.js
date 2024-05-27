@@ -1,25 +1,25 @@
 
-
+/*Graphique pour la température du four, .oven_temp*/ 
 
     defaultColors = [
-        [0,10,'#f20'],
-        [10,20,'#f30'],
-        [20,30,'#f50'],
-        [30,40,'#f60'],
-        [40,50,'#f80'],
-        [50,60,'#fa0'],
-        [60,70,'#fc0'],
-        [70,80,'#fd0'],
-        [80,90,'#ff0'],
-        [90,100,'#ff0'],
+        [0,50,'#f20'],
+        [50,100,'#f30'],
+        [100,150,'#f50'],
+        [150,200,'#f60'],
+        [200,250,'#f80'],
+        [250,300,'#fa0'],
+        [300,350,'#fc0'],
+        [350,400,'#fd0'],
+        [400,450,'#ff0'],
+        [450,500,'#ff0'],
     ];
     
     // Create the Meter chart specifying the min/max/value
     meter = new RGraph.Meter({
         id: 'cvs',
         min: 0,
-        max: 100,
-        value: 75,
+        max: 500,
+        value: 425,
         options: {
 
             marginLeft: 15,
@@ -35,7 +35,7 @@
             colorsRanges: defaultColors,
 
             // Turn off labels
-            labelsCount: 0,
+            labelsCount: 4,
             
             // By setting the start and end angles of the Meter you can change
             // the extent of the Meter chart from the default semi-circle
@@ -73,7 +73,7 @@
         // just a regular JavaScript variable that we're setting here that allows us to
         // track what style of color the chart is using.
         if (!meter.isGradient) {
-            meter.set('colorsRanges', [[0,100,'Gradient({colors:["red","yellow"],x1:50,y1:0,x2:350,y2:0})']]);
+            meter.set('colorsRanges', [[0,500,'Gradient({colors:["red","yellow"],x1:50,y1:0,x2:350,y2:0})']]);
         } else {
             meter.set('colorsRanges', defaultColors);
         }
@@ -85,3 +85,30 @@
 
         RGraph.redraw()
     }
+
+
+/*Graphique pour les ingrédients, pie chart api svg*/
+    
+    data = [40,90,120,100,3,];
+
+    new RGraph.SVG.Pie({
+        id: 'chart-container',
+        data: data,
+        options: {
+            labels: ['farine','beurre','sucre','chocolat noir','oeufs',],
+            shadow: true,
+            colorsStroke: 'rgba(216,216,216,1)',
+            linewidth: 2,
+            exploded: [,,25],
+            colors: ['#f#D9D9D9','#592316','#8C4A32','#C5D930','#72A603'],
+            tooltips: '%{key}',
+            tooltipsFormattedKeyLabels: ['farine','beurre','sucre','chocolat noir','oeufs',],
+            tooltipsFormattedUnitsPost: '%',
+            tooltipsCss: {
+                backgroundColor: '#333',
+                fontWeight: 'bold',
+                fontSize: '14pt',
+                opacity: 0.85
+            }
+        }
+    }).draw();
