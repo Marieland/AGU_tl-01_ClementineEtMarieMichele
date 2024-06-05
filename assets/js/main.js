@@ -3,24 +3,21 @@
 /*Graphique pour la température du four, .oven_temp*/ 
 
     defaultColors = [
-        [0,50,'#f20'],
-        [50,100,'#f30'],
-        [100,150,'#f50'],
-        [150,200,'#f60'],
-        [200,250,'#f80'],
-        [250,300,'#fa0'],
-        [300,350,'#fc0'],
-        [350,400,'#fd0'],
-        [400,450,'#ff0'],
-        [450,500,'#ff0'],
+        [100,150,'#72A603'],
+        [150,200,'#C5D930'],
+        [200,250,'#ff0'],
+        [250,300,'#fc0'],
+        [300,350,'#f80'],
+        [350,400,'#8C4A32'],
+        [400,450,'#592316'],
     ];
     
     // Create the Meter chart specifying the min/max/value
     meter = new RGraph.Meter({
         id: 'cvs-1',
-        min: 0,
-        max: 500,
-        value: 425,
+        min: 100,
+        max: 450,
+        value: 400,
         options: {
 
             marginLeft: 15,
@@ -58,7 +55,7 @@
             adjustable: true,
             responsive: [
                 {maxWidth:null,parentCss: {'float':'right'}},
-                {maxWidth:700,parentCss: {'float':'none'}}
+                {maxWidth:500,parentCss: {'float':'none'}}
             ]
         }
     }).draw();
@@ -74,7 +71,7 @@
         // just a regular JavaScript variable that we're setting here that allows us to
         // track what style of color the chart is using.
         if (!meter.isGradient) {
-            meter.set('colorsRanges', [[0,500,'Gradient({colors:["red","yellow"],x1:50,y1:0,x2:350,y2:0})']]);
+            meter.set('colorsRanges', [[100,450,'Gradient({colors:["#72A603","#592316"],x1:50,y1:0,x2:350,y2:0})']]);
         } else {
             meter.set('colorsRanges', defaultColors);
         }
@@ -90,13 +87,13 @@
 
 /*Graphique pour les ingrédients, pie chart api svg*/
     
-    data = [40,90,100,120,3,];
+    data = [40,90,100,120,3];
 
     new RGraph.SVG.Pie({
-        id: 'chart-container',
+        id: 'chart-container1',
         data: data,
         options: {
-            labels: ['farine','beurre','chocolat noir','sucre','oeufs',],
+            labels: ['farine','beurre','chocolat','sucre','oeufs',],
             shadow: true,
             colorsStroke: 'rgba(216,216,216,1)',
             linewidth: 2,
@@ -108,7 +105,7 @@
             tooltipsCss: {
                 backgroundColor: '#333',
                 fontWeight: 'bold',
-                fontSize: '14pt',
+                fontSize: '16pt',
                 opacity: 0.85
             }
         }
@@ -124,7 +121,7 @@
             colors: ['#592316'],
             yaxis: false,
             yaxisLabelsSpecific: ['Délicieux', 'Pas bon',],
-            marginLeft: 100,
+            marginLeft: 80,
             marginBottom: 180,
             marginTop: 100,
             variant: 'sketch',
@@ -147,8 +144,155 @@
             labelsAboveSpecific: ['Confiture', 'Caramel', 'Nutella', 'Mayonnaise', 'Pâte à dents', 'Crème anglaise'],
             
             responsive: [
-                {maxWidth: null,width:600,height: 280,options: {titleY:25,textSize: 12,marginInner: 15,marginBottom:100,titleSize: 20},parentCss:{'float':'right',textAlign:'none'}},
-                {maxWidth: 800,width:400,height: 200,options: {titleY: 10,textSize: 8,marginInner: 5,marginBottom:65,titleSize: 15},parentCss:{'float':'none',textAlign:'center'}}
+                {maxWidth: null,width:500,height: 280,options: {textSize: 14,marginInner: 17,marginBottom:100},parentCss:{textAlign:'none'}},
+                {maxWidth: 800,width:400,height: 250,options: {textSize: 10,marginInner: 5,marginBottom:90, marginLeft:60},parentCss:{'float':'none',textAlign:'center'}}
             ]
         }
     }).draw();
+
+
+
+     
+    /*Graphique chocolat par pays*/
+ 
+   
+    // The labels for the chart are not added by giving them to the
+    // chart but manually adding text to the chart.
+    labels = ['Allemagne','Belgique','Suisse','Royaume-Uni','France','États-unis','Italie','Japon','Esp.', 'Rus.'];
+ 
+    // Create the Horizontal Bar chart and configure it. With there
+    // being no labels on the left-hand-side the margin autofit
+    // will make the left margin zero
+    new RGraph.HBar({
+        id: 'cvs',
+        data: [11,10.9,10.8,10,7.3,6,4,2.3,2,2],
+        options: {
+            textFont: 'Quicksand',
+            textSize: 12,
+            backgroundGrid: false,
+            xaxis: false,
+            yaxis: false,
+            xaxisScale: false,
+            labelsAbove: true,
+            labelsAboveUnitsPost: 'kg',
+            colors: ['#8C4A32'],
+            shadow: true,
+            shadowColor: '#ddd',
+            shadowOffsetx: 2,
+            shadowOffsety: 2,
+            tooltips: '<i style="position: relative; top: -5px">Usage worldwide:</i> <span style="font-size: 26pt; ">%{value}%',
+            tooltipsCss: {
+                fontSize: '14pt'
+            },
+            highlightFill: 'Gradient(rgba(255,255,255,0):white)',
+            highlightStroke: 'Gradient(rgba(255,255,255,0):white)',
+            responsive: [
+                {maxWidth: null,width:500,height: 300,parentCss:{textAlign:'none'}},
+                {maxWidth: 800,width:400,height: 300,parentCss:{'float':'none', textAlign:'center'}}
+            ]
+        }
+   
+    // Use the draw event to add the labels on the left-hand-side
+    }).on('draw', function (obj)
+    {
+        var coords = obj.coords;
+ 
+        // Loop through the coordinates of the bars
+        for (var i=0; i<coords.length; ++i) {
+       
+            // For each of the coordinates add a text label
+            // on the left-hand-side of the bar
+            RGraph.text({
+                object: obj,
+                text:   labels[i],
+                x:      coords[i][0] + 10,
+                y:      coords[i][1] + (coords[i][3] / 2),
+                valign: 'center',
+                bold:   true,
+                color:  'white',
+                size: obj.get('textSize')
+            });
+        }
+    }).grow();
+
+
+    
+
+
+        //Graphique fer à cheval
+
+    horseshoe = new RGraph.SVG.Horseshoe({
+        id: 'chart-container3',
+        min: 0,
+        max: 100,
+        value: 63,
+        options: {
+            labelsCenterDecimals: 0,
+            labelsCenterUnitsPost: '%'
+        }
+    }).grow();
+    
+    var d = 2500; setTimeout(f = function ()
+    {
+        horseshoe.value = horseshoe.value + RGraph.SVG.random({min: -7, max: 5});
+        horseshoe.grow();
+        
+        setTimeout(f, d);
+    }, d);
+
+
+
+    //Graphique line
+
+     // Create a new RGraph Sheets instance that allows you to connect
+    // to your Google Sheet spreadsheet and retrieve data from it. The
+    // first argument is the OAuth ID (see the Google Sheets documentation
+    // on the RGraph website). The second argument is the key (ie the
+    // unique identifier) of the spreadsheet. This can be found in the URL
+    // of your spreadsheet. The third argument is the worksheet if you
+    // need to give one - this argument is optional
+    new RGraph.Sheets(
+        'AIzaSyBPofvjcDhOdet_U2Tr4-rSLItAgaCsMCM',
+        '1ncvARBgXaDjzuca9i7Jyep6JTv9kms-bbIzyAxbaT0E',
+        'Line chart',
+    function (sheet)
+    {
+        // Now, in the Sheets object callback, the Line chart can be created
+        // as normal
+        new RGraph.Line({
+            id: 'cvs-line',
+            
+            // Use the sheets object to retrieve some data from the spreadsheet that acts
+            // as the data
+            data: sheet.get('B2:M2'),
+
+            options: {
+                linewidth: 5,
+                tickmarksStyle: null,
+                
+                // Use the sheets object again to retrieve some data from the
+                // spreadsheet that acts as the X-axis labels on the chart
+                xaxisLabels: sheet.get('B1:M1'),
+
+                xaxisLabelsOffsety: 5,
+                colors: ['#72A603'],
+                shadowOffsetx: 2,
+                shadowOffsety: 2,
+                colorsStroke: 'rgba(0,0,0,0)',
+                xaxis: false,
+                yaxis: false,
+                backgroundGridVlines: false,
+                backgroundGridBorder: false,
+                marginLeft: 35,
+                marginInner: 10,
+                spline: true,
+                responsive: [
+                    {maxWidth: null,width:500,height:300,options:{textSize: 12}},
+                    {maxWidth: 900,width:400,height:200,options:{textSize: 10}}
+                ]
+            }
+        
+        // Animate the chart using the trace() effect and add some responsive capability
+        // to accommodate smaller screens
+        }).trace();
+    });

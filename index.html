@@ -12,51 +12,122 @@
         <nav>
             <ul>
                 <li><a href="#temp">Température du four</a></li>
-                <li><a href="#chart-container">Ingrédients requis</a></li>
-                <li><a href="#">section3</a></li>
-                <li><a href="#">section4</a></li>
-                <li><a href="#">section5</a></li>
-                <li><a href="#">section6</a></li>
+                <li><a href="#ingredients">Ingrédients requis</a></li>
+                <li><a href="#coeur">Coeur coulant</a></li>
+                <li><a href="#chocolat">Consommation dans le monde</a></li>
+                <li><a href="realisation">Poucentage de réalisation</a></li>
+                <li><a href="consommation">Consommation au Canada</a></li>
             </ul>
         </nav>
     </header>
     <main>
 
-        <div id="temp" class="temperature">
+        <section id="temp" class="temperature">
             <h2>Préchauffez le four à:</h2>
-            <canvas id="cvs-1" width="500" height="250"></canvas>
+            <canvas id="cvs-1" width="500" height="300"></canvas>
             <button onclick="toggleGradient()" style="font-size: 20pt">Température</button>
-        </div>
+        </section>
         
-        <div id="chart-container" class="ingredients">
+        <section id="ingredients">
             <h2>Préparez vos ingredients</h2>
-        </div>
-
-        <div id="coeur-coulant">
-            <div>
-                <h2>Choix du coeur coulant...</h2>
-                <canvas id="cvs-2" width="600" height="400"></canvas>
+            <div id="chart-container1" class="ingredients"></div>
+            <div class="procede">
+                <table>
+                    <thead>
+                        <tr>
+                          <th scope="col">Ingrédients</th>
+                          <th scope="col">Quantité</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">farine</th>
+                          <td>40 g</td>  
+                        </tr>
+                        <tr>
+                          <th scope="row">beurre</th>
+                          <td>90 g</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">sucre semoule</th>
+                          <td>120 g</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">chocolat noir</th>
+                          <td>100 g</td>
+                        </tr>
+                        <tr>  
+                            <th scope="row">oeufs</th>
+                            <td>3</td>
+                        </tr>
+                      </tbody>
+                </table>
+                <div>
+                    <p>vhjsfhsj</p>
+                    <p>gudsdjh</p>
+                    <p>drhtdh</p>
+                </div>
+               
             </div>
-        </div>
+            </div>
+        </section>
 
-        
+        <section id="coeur">
+            <h2>Choix du coeur coulant...</h2>
+            <div>
+                <canvas id="cvs-2" width="500" height="300"></canvas>
+            </div>
+        </section>
 
-        <script src="./assets/js/RGraph.common.core.js"></script>
+        <section id="chocolat">
+            <h2>La consommation de chocolat à travers le monde</h2>
+            <div>
+                <canvas id="cvs" width="500" height="300">[No canvas support]</canvas>
+            </div>
+            <blockquote>
+                <p>Les Allemands sont les plus gros mangeurs de chocolat au monde. Chaque année, chaque habitant
+                    consomment plus de 11 kilogrammes, selon les chiffres du Syndicat du chocolat. Ils sont suivis
+                    par la Suisse, avec une ingurgitation de 9,7 kg par habitant chaque année, puis de l’Estonie
+                    (8,8 kg).
+                </p>
+                <cite><a
+                        href="https://www.bfmtv.com/economie/noir-ou-au-lait-ce-que-represente-la-consommation-du-chocolat-en-chiffres-a-travers-le-monde_AN-201910300033.html#:~:text=Les%20Allemands%20sont%20les%20plus,(8%2C8%20kg).">NOIR
+                        OU AU LAIT? CE QUE REPRÉSENTE LA CONSOMMATION DU CHOCOLAT, EN CHIFFRES, À TRAVERS LE
+                        MONDE</a></cite>
+            </blockquote>
+        </section>
+
+        <section id="realisation">
+            <h2>Pourcentage de réalisation de la recette</h2>
+            <div id="chart-container3"></div>
+        </section>
+
+        <section id="consommation">
+            <h2>Consommation de chocolat au Canada</h2>
+            <div>
+                <canvas id="cvs-line" width="500" height="300">[No canvas support]</canvas>
+            </div>
+        </section>
+
+
         <script src="./assets/js/RGraph.common.core.js"></script><!--a customised meter chart-->
         <script src="./assets/js/RGraph.common.dynamic.js"></script><!--a customised meter chart-->
         <script src="./assets/js/RGraph.meter.js"></script><!--a customised meter chart-->
         <script src="./assets/js/RGraph.svg.common.core.js"></script><!--pie chart api-->
         <script src="./assets/js/RGraph.svg.common.sheets.js"></script><!--pie chart api-->
         <script src="./assets/js/RGraph.svg.pie.js"></script><!--pie chart api-->
-        <script src="./assets/js/RGraph.bar.js"></script>
+        <script src="./assets/js/RGraph.bar.js"></script><!--coeur coulant mi-cuit-->
+        <script src="./assets/js/RGraph.common.tooltips.js"></script><!--horizontal bar chart-->
+        <script src="./assets/js/RGraph.hbar.js"></script><!--horizontal bar chart-->
+        <script src="./assets/js/RGraph.svg.horseshoe.js"></script><!--svg horseshoe chart-->
+        <script src="./assets/js/RGraph.common.sheets.js"></script><!--line chart-->
+        <script src="./assets/js/RGraph.line.js"></script><!--line chart-->
     </main>
+
 
     <footer>
 
     </footer>
 
-
-    
-    
 </body>
 </html>
