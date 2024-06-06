@@ -75,6 +75,7 @@ h1, h2 {
     font-family: var(--font-heading);
 }
 
+
 main {
     display: grid;
     justify-content: center;
@@ -107,6 +108,14 @@ button:hover, button:focus {
 
 section {
     background-color: white;
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: #592316;
+}
+
+ul{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -219,7 +228,7 @@ footer {
     background-color: var(--brown);
     color: white;
     width: 100vw;
-}
+
 
 @media screen and (min-width: 768px) {
 
@@ -241,11 +250,5 @@ footer {
     main {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
-
-
-
-
-
 

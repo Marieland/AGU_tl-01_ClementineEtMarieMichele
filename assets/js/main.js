@@ -365,5 +365,3 @@ sketchyChart();
 horizontalBarGraph();
 
 horseShoeGraph();
-
-lineGraph();

@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <script src="./assets/js/main.js" defer></script>
+    <title>Le mi-cuit au chocolat</title>
 </head>
+
 <body>
     <header>
         <div class="div_header">
@@ -25,7 +27,6 @@
     </header>
 
     <main>
-    
         <section id="temp" class="temperature">
             <h2>Préchauffez le four à:</h2>
             <div class="graph__temp">
@@ -210,7 +211,24 @@
                     <li><img src="./assets/img/meal.png" alt=""><p>Manger le délicieux dessert au chocolat</p></li>
                 </ul>
             </div>
-        </section>
+       
+
+            <div id="chocolat">
+                <h2>La consommation de chocolat à travers le monde</h2>
+                <canvas id="cvs" width="600" height="350">[No canvas support]</canvas>
+                <blockquote>
+                    <p>Les Allemands sont les plus gros mangeurs de chocolat au monde. Chaque année, chaque habitant
+                        consomment plus de 11 kilogrammes, selon les chiffres du Syndicat du chocolat. Ils sont suivis
+                        par la Suisse, avec une ingurgitation de 9,7 kg par habitant chaque année, puis de l’Estonie
+                        (8,8 kg).</p>
+                    <cite><a
+                            href="https://www.bfmtv.com/economie/noir-ou-au-lait-ce-que-represente-la-consommation-du-chocolat-en-chiffres-a-travers-le-monde_AN-201910300033.html#:~:text=Les%20Allemands%20sont%20les%20plus,(8%2C8%20kg).">NOIR
+                            OU AU LAIT? CE QUE REPRÉSENTE LA CONSOMMATION DU CHOCOLAT, EN CHIFFRES, À TRAVERS LE
+                            MONDE</a></cite>
+                </blockquote>
+            </div>
+       
+
 
         <section id="composition">
             <h2>Composition de différents chocolats</h2>
@@ -239,8 +257,7 @@
             </div>
         </section>
 
-
-        <script src="./assets/js/RGraph.common.core.js"></script><!--a customised meter chart-->
+        <script src="./assets/js/RGraph.common.core.js"></script>
         <script src="./assets/js/RGraph.common.dynamic.js"></script><!--a customised meter chart-->
         <script src="./assets/js/RGraph.meter.js"></script><!--a customised meter chart-->
         <script src="./assets/js/RGraph.svg.common.core.js"></script><!--pie chart api-->
@@ -252,6 +269,8 @@
         <script src="./assets/js/RGraph.svg.horseshoe.js"></script><!--svg horseshoe chart-->
         <script src="./assets/js/RGraph.common.sheets.js"></script><!--line chart-->
         <script src="./assets/js/RGraph.line.js"></script><!--line chart-->
+
+
     </main>
 
 
@@ -262,4 +281,5 @@
     </footer>
 
 </body>
+
 </html>
