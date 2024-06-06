@@ -117,7 +117,7 @@
 
             yaxis:                    true,
             yaxisLinewidth:           1,
-            yaxisColor:               'black',
+            yaxisColor:               '#592316',
             yaxisTickmarks:           true,
             yaxisTickmarksCount:      null,
             yaxisTickmarksLastTop:    null,
@@ -205,9 +205,9 @@
 
             textItalic:                   false,
             textBold:                     false,
-            textColor:                    'black',
+            textColor:                    '#592316',
             textSize:                     12,
-            textFont:                     'Arial, Verdana, sans-serif',
+            textFont:                     'Quicksand, sans-serif',
             textAccessible:               false,
             textAccessibleOverflow:      'visible',
             textAccessiblePointerevents: false,

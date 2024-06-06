@@ -1,6 +1,5 @@
-
-
 /*Graphique pour la température du four, .oven_temp*/ 
+const demiCercleGraph = () => {
 
     defaultColors = [
         [100,150,'#72A603'],
@@ -54,11 +53,12 @@
             // new value of the chart.
             adjustable: true,
             responsive: [
-                {maxWidth:null,parentCss: {'float':'right'}},
-                {maxWidth:500,parentCss: {'float':'none'}}
+                {maxWidth:500,parentCss: {'float':'right'}},
+                {maxWidth:200,parentCss: {'float':'none'}}
             ]
         }
     }).draw();
+}
     
     
     //
@@ -86,8 +86,9 @@
 
 
 /*Graphique pour les ingrédients, pie chart api svg*/
-    
-    data = [40,90,100,120,3];
+    const pieChart = () => {
+
+        data = [40,90,100,120,3];
 
     new RGraph.SVG.Pie({
         id: 'chart-container1',
@@ -100,7 +101,7 @@
             exploded: [,,25],
             colors: ['#D9D9D9','#592316','#8C4A32','#C5D930','#72A603'],
             tooltips: '%{key}',
-            tooltipsFormattedKeyLabels: ['farine','beurre','chocolat noir','sucre','oeufs',],
+            tooltipsFormattedKeyLabels: ['farine','beurre','chocolat noir','sucre','oeufs'],
             tooltipsFormattedUnitsPost: '%',
             tooltipsCss: {
                 backgroundColor: '#333',
@@ -110,10 +111,13 @@
             }
         }
     }).draw();
+}
 
     // Create the Bar chart and give it some data. This chart is
     // made to look sketchy by supplying the variant property and
     // setting it to 'sketch'
+const sketchyChart = () => {
+
     new RGraph.Bar({
         id: 'cvs-2',
         data: [30,60,40,-25,-50,50],
@@ -141,25 +145,27 @@
             // The labelsAbove labels serve as the labels for the chart
             labelsAbove: true,
             labelsAboveOffsety: 10,
-            labelsAboveSpecific: ['Confiture', 'Caramel', 'Nutella', 'Mayonnaise', 'Pâte à dents', 'Crème anglaise'],
+            labelsAboveSpecific: ['Confiture', 'Caramel', 'Nutella', 'Ketchup', 'Pâte à dents', 'Crème anglaise'],
             
             responsive: [
                 {maxWidth: null,width:500,height: 280,options: {textSize: 14,marginInner: 17,marginBottom:100},parentCss:{textAlign:'none'}},
-                {maxWidth: 800,width:400,height: 250,options: {textSize: 10,marginInner: 5,marginBottom:90, marginLeft:60},parentCss:{'float':'none',textAlign:'center'}}
+                {maxWidth: 300,width:300,height: 200,options: {textSize: 10,marginInner: 5,marginBottom:90, marginLeft:60},parentCss:{'float':'none',textAlign:'center'}}
             ]
         }
     }).draw();
+}
 
 
 
-     
+
+
     /*Graphique chocolat par pays*/
- 
-   
-    // The labels for the chart are not added by giving them to the
+    const horizontalBarGraph = () => {
+
+        // The labels for the chart are not added by giving them to the
     // chart but manually adding text to the chart.
     labels = ['Allemagne','Belgique','Suisse','Royaume-Uni','France','États-unis','Italie','Japon','Esp.', 'Rus.'];
- 
+
     // Create the Horizontal Bar chart and configure it. With there
     // being no labels on the left-hand-side the margin autofit
     // will make the left margin zero
@@ -187,19 +193,19 @@
             highlightFill: 'Gradient(rgba(255,255,255,0):white)',
             highlightStroke: 'Gradient(rgba(255,255,255,0):white)',
             responsive: [
-                {maxWidth: null,width:500,height: 300,parentCss:{textAlign:'none'}},
-                {maxWidth: 800,width:400,height: 300,parentCss:{'float':'none', textAlign:'center'}}
+                {maxWidth: 500,width:500,height: 300,parentCss:{textAlign:'none'}},
+                {maxWidth: 300,width:300,height: 200,parentCss:{'float':'none', textAlign:'center'}}
             ]
         }
-   
+
     // Use the draw event to add the labels on the left-hand-side
     }).on('draw', function (obj)
     {
         var coords = obj.coords;
- 
+
         // Loop through the coordinates of the bars
         for (var i=0; i<coords.length; ++i) {
-       
+
             // For each of the coordinates add a text label
             // on the left-hand-side of the bar
             RGraph.text({
@@ -214,47 +220,48 @@
             });
         }
     }).grow();
-
+}
 
     
 
+    //Graphique fer à cheval
+const horseShoeGraph = () => {
 
-        //Graphique fer à cheval
-        window.onload = function() {
-            // Valeurs fixes à afficher séquentiellement
-            var valeurs = [0, 25, 50, 75, 100];
-            var index = 0;
+    window.onload = function() {
+        // Valeurs fixes à afficher séquentiellement
+        var valeurs = [0, 25, 50, 75, 100];
+        var index = 0;
 
-            // Création du graphique horseshoe
-            var horseshoe = new RGraph.SVG.Horseshoe({
-                id: 'chart-container3',
-                min: 0,
-                max: 100,
-                value: valeurs[index],
-                options: {
-                    labelsCenterDecimals: 0,
-                    labelsCenterUnitsPost: '%'
-                }
-            }).grow();
+        // Création du graphique horseshoe
+        var horseshoe = new RGraph.SVG.Horseshoe({
+            id: 'chart-container3',
+            min: 0,
+            max: 100,
+            value: valeurs[index],
+            options: {
+                labelsCenterDecimals: 0,
+                labelsCenterUnitsPost: '%'
+            }
+        }).grow();
 
-            // Mise à jour des valeurs séquentielles
-            var d = 2500; // Intervalle de mise à jour (2,5 secondes)
-            setTimeout(function update() {
-                index = (index + 1) % valeurs.length;
-                horseshoe.value = valeurs[index];
-                horseshoe.grow();
-                
-                setTimeout(update, d);
-            }, d);
-        }
+        // Mise à jour des valeurs séquentielles
+        var d = 2500; // Intervalle de mise à jour (2,5 secondes)
+        setTimeout(function update() {
+            index = (index + 1) % valeurs.length;
+            horseshoe.value = valeurs[index];
+            horseshoe.grow();
+            
+            setTimeout(update, d);
+        }, d);
+    }
 
-
-
+}
 
 
     //Graphique line
+    const lineGraph = () => {
 
- // Create the first Line chart. Note the animationTraceCenter
+    // Create the first Line chart. Note the animationTraceCenter
     // property is set to true which changes the behaviour of the
     // trace() effect. The backgroundGrid and axes are enabled on this
     // chart (horizontal lines only). The charts are all filled and
@@ -278,8 +285,8 @@
             yaxisScaleMax: 100,
             xaxisLabels:['Noir 85%','Noir 55%','Lait 35%','Blanc 32%','Cacao'],
             responsive: [
-                {maxWidth:null,width: 600,height:250,options:{textSize: 14},parentCss:{'float':'right', textAlign: 'none'}},
-                {maxWidth:900, width: 400,height:200,options:{textSize: 10},parentCss:{'float':'none', textAlign: 'center'}}
+                {maxWidth:500,width: 500,height:350,options:{textSize: 14},parentCss:{'float':'right', textAlign: 'none'}},
+                {maxWidth:300, width: 300,height:200,options:{textSize: 10},parentCss:{'float':'none', textAlign: 'center'}}
             ]
         }
     }).trace(null, function ()
@@ -344,3 +351,19 @@
             }).trace();
         });
     });
+
+    }
+
+
+
+demiCercleGraph();
+
+pieChart();
+
+sketchyChart();
+
+horizontalBarGraph();
+
+horseShoeGraph();
+
+lineGraph();

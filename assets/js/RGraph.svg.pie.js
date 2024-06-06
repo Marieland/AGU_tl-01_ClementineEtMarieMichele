@@ -156,7 +156,7 @@
             ],
             colorsStroke:      'rgba(0,0,0,0)',
             
-            textColor: 'black',
+            textColor: '#592316',
             textFont: 'Arial, Verdana, sans-serif',
             textSize: 12,
             textBold: false,
