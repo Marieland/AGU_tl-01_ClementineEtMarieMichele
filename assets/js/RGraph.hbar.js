@@ -63,7 +63,8 @@
             marginRight:           35,
             marginTop:             35,
             marginBottom:          35,
-            marginInner:                2,
+
+            marginInner:                1.5,
             marginInnerGrouped:        2,
             
             backgroundBarsCount:       null,
@@ -116,7 +117,8 @@
 
             textSize:              12,
             textColor:             'black',
-            textFont:              'Arial, Verdana, sans-serif',
+            textFont:              'Quicksand, sans-serif',
+
             textBold:              false,
             textItalic:            false,
             textAngle:             0,

@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Quicksand:wght@300..700&display=swap');
 
 
@@ -9,19 +8,106 @@
     --lightbrown: #8C4A32;
     --brown: #592316;
     --grey: #D9D9D9;
-    --box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    --box-shadow: 10px 10px 10px #5923164a;
+    --font-heading: "Kalam", cursive;
+    --font-text: "Quicksand", sans-serif;
 }
 
-
-
-body{
-    background-color:  var(--grey);
+body {
+    margin: 0;
+    font-family: var(--font-text);
+    overflow-x: hidden;
+    background-color: #e9e5e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
-    background-color:#C5D930;
+    margin: 0;
+    width: 100vw;
+}
+
+.div_header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color:var(--brown);
+    margin: 0;
+    border-bottom: 2px solid white;
+    padding: 2rem 0;
+}
+
+nav {
+    padding-top: 2rem;
+    border-top: 2px solid white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul li a {
+    color: white;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    font-weight: bold;
+    text-decoration: underline;
+    color: white;
+}
+
+.chocolat__img {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+}
+
+
+main {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    color: #592316;
+    gap: 2rem;
+    max-width: 1500px;
+    padding: 2rem;
+}
+
+.graph__temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    color: white;
+    font-family: var(--font-heading);
+    background-color: var(--brown);
+    border: 1px solid var(--brown);
+    border-radius: 10px;
     padding: 1rem;
 }
+
+button:hover, button:focus {
+    box-shadow: var(--box-shadow);
+}
+
+section {
+    background-color: white;
 
 main {
     display: grid;
@@ -31,43 +117,138 @@ main {
 
 ul{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap:1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid var(--brown);
+    border-radius: 20px;
+    gap: 3rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem 0;
+}
+
+table{
+    width:150px;
+    height: 200px;  
+    padding: 1rem;
+    background-color: var(--brown);
+}
+
+th, td{
+    border: solid 1px var(--brown);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    color:var(--brown);
+}
+
+ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.procede, .temp, .procede-cara {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+.p__no-margin {
+    margin: 0;
+}
+
+.p__margin {
+    margin: 1rem 2rem;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+ul img {
+    width: 40px;
+}
+
+blockquote {
+    margin: 2rem;
 }
 
 a{
+    color: #567c02;
     text-decoration: none;
 }
 
-
-.temperature{
-   
-    text-align: center;
+a:hover, a:focus {
+    color: var(--brown);
 }
 
-#chart-container{
-    
-    width: 650px;
+.carre {
+    width: 30px;
+    height: 30px;
+    margin-left: 2rem;
+}
+
+.darkBrown {
+    background-color: var(--brown);
+}
+
+.lightBrown {
+    background-color: var(--lightbrown);
+}
+
+.green {
+    background-color: var(--darkgreen);
+}
+
+#chart-container1{
+    width: 500px;
     height: 300px;
 }
 
-#chocolat{
-  float:left;
+#chart-container3{
+    width: 500px;
+    height: 300px;
 }
 
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 2rem;
+    background-color: var(--brown);
+    color: white;
+    width: 100vw;
+
+
 @media screen and (min-width: 768px) {
-    
-    main {
-        grid-template-columns: repeat(2, 1fr);
+
+    .procede, .temp, .procede-cara {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 }
 
 
 @media screen and (min-width: 1024px) {
     
+
+    header nav ul {
+        flex-direction: row;
+    }
+
     main {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
