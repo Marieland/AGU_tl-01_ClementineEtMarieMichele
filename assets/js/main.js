@@ -17,7 +17,7 @@
         id: 'cvs-1',
         min: 100,
         max: 450,
-        value: 400,
+        value: 350,
         options: {
 
             marginLeft: 15,
@@ -220,79 +220,127 @@
 
 
         //Graphique fer à cheval
+        window.onload = function() {
+            // Valeurs fixes à afficher séquentiellement
+            var valeurs = [0, 25, 50, 75, 100];
+            var index = 0;
 
-    horseshoe = new RGraph.SVG.Horseshoe({
-        id: 'chart-container3',
-        min: 0,
-        max: 100,
-        value: 63,
-        options: {
-            labelsCenterDecimals: 0,
-            labelsCenterUnitsPost: '%'
+            // Création du graphique horseshoe
+            var horseshoe = new RGraph.SVG.Horseshoe({
+                id: 'chart-container3',
+                min: 0,
+                max: 100,
+                value: valeurs[index],
+                options: {
+                    labelsCenterDecimals: 0,
+                    labelsCenterUnitsPost: '%'
+                }
+            }).grow();
+
+            // Mise à jour des valeurs séquentielles
+            var d = 2500; // Intervalle de mise à jour (2,5 secondes)
+            setTimeout(function update() {
+                index = (index + 1) % valeurs.length;
+                horseshoe.value = valeurs[index];
+                horseshoe.grow();
+                
+                setTimeout(update, d);
+            }, d);
         }
-    }).grow();
-    
-    var d = 2500; setTimeout(f = function ()
-    {
-        horseshoe.value = horseshoe.value + RGraph.SVG.random({min: -7, max: 5});
-        horseshoe.grow();
-        
-        setTimeout(f, d);
-    }, d);
+
+
 
 
 
     //Graphique line
 
-     // Create a new RGraph Sheets instance that allows you to connect
-    // to your Google Sheet spreadsheet and retrieve data from it. The
-    // first argument is the OAuth ID (see the Google Sheets documentation
-    // on the RGraph website). The second argument is the key (ie the
-    // unique identifier) of the spreadsheet. This can be found in the URL
-    // of your spreadsheet. The third argument is the worksheet if you
-    // need to give one - this argument is optional
-    new RGraph.Sheets(
-        'AIzaSyBPofvjcDhOdet_U2Tr4-rSLItAgaCsMCM',
-        '1ncvARBgXaDjzuca9i7Jyep6JTv9kms-bbIzyAxbaT0E',
-        'Line chart',
-    function (sheet)
+ // Create the first Line chart. Note the animationTraceCenter
+    // property is set to true which changes the behaviour of the
+    // trace() effect. The backgroundGrid and axes are enabled on this
+    // chart (horizontal lines only). The charts are all filled and
+    // splines. The effect used is (obviously) the trace effect and
+    // the callback function creates the second Line chart.
+    l1 = new RGraph.Line({
+        id: 'cvs2',
+        data: [40,35,30,20,100],
+        options: {
+            animationTraceCenter: true,
+            tickmarksStyle: null,
+            shadow: false,
+            linewidth: 0,
+            backgroundGridVlines: false,
+            backgroundGridBorder: false,
+            xaxis: false,
+            yaxis: false,
+            spline: true,
+            filled: true,
+            colors: ['#592316'],
+            yaxisScaleMax: 100,
+            xaxisLabels:['Noir 85%','Noir 55%','Lait 35%','Blanc 32%','Cacao'],
+            responsive: [
+                {maxWidth:null,width: 600,height:250,options:{textSize: 14},parentCss:{'float':'right', textAlign: 'none'}},
+                {maxWidth:900, width: 400,height:200,options:{textSize: 10},parentCss:{'float':'none', textAlign: 'center'}}
+            ]
+        }
+    }).trace(null, function ()
     {
-        // Now, in the Sheets object callback, the Line chart can be created
-        // as normal
+        // Create the second Line chart. Again this uses the
+        // animationTraceCenter property that modifies the
+        // trace() effect. It has no axes or backgroundGrid
+        // - these are defined on the first chart. Note that
+        // unlike the first chart this has two datasets
+        // defined - the dataset from the first chart (which
+        // is transparent) and this charts dataaset.
         new RGraph.Line({
-            id: 'cvs-line',
-            
-            // Use the sheets object to retrieve some data from the spreadsheet that acts
-            // as the data
-            data: sheet.get('B2:M2'),
-
+            id: 'cvs2',
+            data: [
+                [40,35,30,20,100],
+                [20,25,30,35,0]
+            ],
             options: {
-                linewidth: 5,
+                animationTraceCenter: true,
                 tickmarksStyle: null,
-                
-                // Use the sheets object again to retrieve some data from the
-                // spreadsheet that acts as the X-axis labels on the chart
-                xaxisLabels: sheet.get('B1:M1'),
-
-                xaxisLabelsOffsety: 5,
-                colors: ['#72A603'],
-                shadowOffsetx: 2,
-                shadowOffsety: 2,
-                colorsStroke: 'rgba(0,0,0,0)',
+                shadow: false,
+                linewidth: 0,
+                backgroundGrid: false,
                 xaxis: false,
                 yaxis: false,
-                backgroundGridVlines: false,
-                backgroundGridBorder: false,
-                marginLeft: 35,
-                marginInner: 10,
+                colors: ['transparent', '#C5D930'],
                 spline: true,
-                responsive: [
-                    {maxWidth: null,width:500,height:300,options:{textSize: 12}},
-                    {maxWidth: 900,width:400,height:200,options:{textSize: 10}}
-                ]
+                filled: true,
+                yaxisScaleMax: 100,
+                yaxisScale: false
             }
-        
-        // Animate the chart using the trace() effect and add some responsive capability
-        // to accommodate smaller screens
-        }).trace();
+        }).trace(null, function ()
+        {
+            // Again the trace() effect callback function is used
+            // to trigger the drawing of the next Line chart.
+            // Three datasets now - ie all three. The first two are
+            // colored transparent so that you can't see them. Like
+            // the second chart there's no backgroundGrid or axes and
+            // with this being the final chart - there's no callback
+            // function.
+            new RGraph.Line({
+                id: 'cvs2',
+                data: [
+                    [40,35,30,20,100],
+                    [20,25,30,35,0],
+                    [32,32,35,40,0]
+                ],
+                options: {
+                    animationTraceCenter: true,
+                    tickmarksStyle: null,
+                    shadow: false,
+                    linewidth: 0,
+                    backgroundGrid: false,
+                    xaxis: false,
+                    yaxis: false,
+                    colors: ['transparent', 'transparent', '#8C4A32'],
+                    spline: true,
+                    filled: true,
+                    yaxisScaleMax: 100,
+                    yaxisScale: false
+                }
+            }).trace();
+        });
     });

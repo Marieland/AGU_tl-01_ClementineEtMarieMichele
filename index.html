@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,67 @@
 </head>
 <body>
     <header>
-        <h1>Le mi-cuit au chocolat</h1>
-        <nav>
-            <ul>
-                <li><a href="#temp">Température du four</a></li>
-                <li><a href="#ingredients">Ingrédients requis</a></li>
-                <li><a href="#coeur">Coeur coulant</a></li>
-                <li><a href="#chocolat">Consommation dans le monde</a></li>
-                <li><a href="realisation">Poucentage de réalisation</a></li>
-                <li><a href="consommation">Consommation au Canada</a></li>
-            </ul>
-        </nav>
+        <div class="div_header">
+            <h1>Le mi-cuit au chocolat</h1>
+            <nav>
+                <ul>
+                    <li><a href="#temp">Température du four</a></li>
+                    <li><a href="#ingredients">Ingrédients requis</a></li>
+                    <li><a href="#coeur">Coeur coulant</a></li>
+                    <li><a href="#chocolat">Consommation dans le monde</a></li>
+                    <li><a href="#realisation">Poucentage de réalisation</a></li>
+                    <li><a href="#composition">Composition des chocolats</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img class="chocolat__img" src="./assets/img/img-chocolat-coulant.png" alt="Image de chocolat qui fond">
     </header>
-    <main>
 
+    <main>
+    
         <section id="temp" class="temperature">
             <h2>Préchauffez le four à:</h2>
-            <canvas id="cvs-1" width="500" height="300"></canvas>
-            <button onclick="toggleGradient()" style="font-size: 20pt">Température</button>
+            <div class="graph__temp">
+                <canvas id="cvs-1" width="500" height="300"></canvas>
+                <button onclick="toggleGradient()" style="font-size: 20pt">Température</button>
+            </div>
+            <div class="temp">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Degrés Celsius (°C)</th>
+                            <th>Degrés Fahrenheit (°F)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>76</td>
+                            <td>170</td>
+                        </tr>
+                        <tr>
+                            <td>120</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>164</td>
+                            <td>330</td>
+                        </tr>
+                        <tr>
+                            <td>208</td>
+                            <td>410</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="p__no-margin">La cuisson d'un mi-cuit au chocolat, se fait généralement à une température d'environ 180°C (350°F). Cette température permet de cuire l'extérieur du gâteau tout en laissant l'intérieur fondant et coulant. Le but de cette cuisson est d'obtenir une croûte légèrement croustillante qui contraste avec le cœur moelleux et chocolaté, offrant une texture et une expérience gustative parfaites. Le temps de cuisson est généralement court, environ 10 à 12 minutes, pour assurer que l'intérieur reste coulant.</p>
+            </div>
         </section>
         
         <section id="ingredients">
@@ -41,34 +84,41 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">farine</th>
+                          <th scope="row">Farine</th>
                           <td>40 g</td>  
                         </tr>
                         <tr>
-                          <th scope="row">beurre</th>
+                          <th scope="row">Beurre</th>
                           <td>90 g</td>
                         </tr>
                         <tr>
-                          <th scope="row">sucre semoule</th>
+                          <th scope="row">Sucre</th>
                           <td>120 g</td>
                         </tr>
                         <tr>
-                          <th scope="row">chocolat noir</th>
+                          <th scope="row">Chocolat</th>
                           <td>100 g</td>
                         </tr>
                         <tr>  
-                            <th scope="row">oeufs</th>
+                            <th scope="row">Oeufs</th>
                             <td>3</td>
                         </tr>
                       </tbody>
                 </table>
                 <div>
-                    <p>vhjsfhsj</p>
-                    <p>gudsdjh</p>
-                    <p>drhtdh</p>
                 </div>
-               
-            </div>
+                    <ul class="ingredients">
+                        <li>ÉTAPE 1 Préchauffer le four à 350°F</li>
+                        <li>ÉTAPE 2 Fondre le chocolat et le beurre</li>
+                        <li>ÉTAPE 3 Blanchir les oeufs entiers et le sucre au batteur</li>
+                        <li>ÉTAPE 4 Mélanger les eux premières préparation.</li>
+                        <li>ÉTAPE 5 Incorporer la farine.</li>
+                        <li>ÉTAPE 6 Beurrer des ramequins ou des moules en aluminium jetables.</li>
+                        <li>ÉTAPE 7 Verser la préparation dans les moules et Enfourner pour 15 mn.</li>
+                        <li>ÉTAPE 8 Le dessus de chaque mi-cuit doit former une croûte et l'intérieur doit être coulant. Servir dès la sortie du four, démoulé ou pas !</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
@@ -77,35 +127,114 @@
             <div>
                 <canvas id="cvs-2" width="500" height="300"></canvas>
             </div>
+            <div class="procede-cara">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ingrédients</th>
+                            <th>Quantité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sucre en poudre</td>
+                            <td>200 g</td>
+                        </tr>
+                        <tr>
+                            <td>Beurre salé</td>
+                            <td>80 g</td>
+                        </tr>
+                        <tr>
+                            <td>Crème entière</td>
+                            <td>200 ml</td>
+                        </tr>
+                        <tr>
+                            <td>Fleur de sel</td>
+                            <td>1 pincée</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <ul class="ingredients">
+                    <li>
+                        ÉTAPE 1. Faites chauffer le sucre dans une casserole à feu moyen sans remuer jusqu'à obtenir un caramel ambré. Faites chauffer la crème séparément.
+                    </li>
+                    <li>
+                        ÉTAPE 2. Hors du feu, ajoutez la crème tiède au caramel en mélangeant pour éviter les éclaboussures. Remettez sur feu doux.
+                    </li>
+                    <li>
+                        ÉTAPE 3. Ajoutez le beurre en morceaux et mélangez jusqu'à ce qu'il soit fondu et la sauce lisse.
+                    </li>
+                    <li>
+                        ÉTAPE 4. Laissez cuire à feu doux pendant 2-3 minutes pour épaissir légèrement. Ajoutez une pincée de fleur de sel.
+                    </li>
+                    <li>
+                        ÉTAPE 5. Versez dans un bocal et laissez refroidir à température ambiante. Conservez au réfrigérateur et réchauffez avant de servir.
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section id="chocolat">
-            <h2>La consommation de chocolat à travers le monde</h2>
+            <h2 class="p__margin">La consommation de chocolat à travers le monde</h2>
             <div>
                 <canvas id="cvs" width="500" height="300">[No canvas support]</canvas>
             </div>
-            <blockquote>
-                <p>Les Allemands sont les plus gros mangeurs de chocolat au monde. Chaque année, chaque habitant
-                    consomment plus de 11 kilogrammes, selon les chiffres du Syndicat du chocolat. Ils sont suivis
-                    par la Suisse, avec une ingurgitation de 9,7 kg par habitant chaque année, puis de l’Estonie
-                    (8,8 kg).
-                </p>
-                <cite><a
-                        href="https://www.bfmtv.com/economie/noir-ou-au-lait-ce-que-represente-la-consommation-du-chocolat-en-chiffres-a-travers-le-monde_AN-201910300033.html#:~:text=Les%20Allemands%20sont%20les%20plus,(8%2C8%20kg).">NOIR
-                        OU AU LAIT? CE QUE REPRÉSENTE LA CONSOMMATION DU CHOCOLAT, EN CHIFFRES, À TRAVERS LE
-                        MONDE</a></cite>
-            </blockquote>
+            <div>
+                <blockquote>
+                    <p>Les Allemands sont les plus gros mangeurs de chocolat au monde. Chaque année, chaque habitant
+                        consomment plus de 11 kilogrammes, selon les chiffres du Syndicat du chocolat. Ils sont suivis
+                        par la Suisse, avec une ingurgitation de 9,7 kg par habitant chaque année, puis de l’Estonie
+                        (8,8 kg).
+                    </p>
+                    <cite><a
+                            href="https://www.bfmtv.com/economie/noir-ou-au-lait-ce-que-represente-la-consommation-du-chocolat-en-chiffres-a-travers-le-monde_AN-201910300033.html#:~:text=Les%20Allemands%20sont%20les%20plus,(8%2C8%20kg).">NOIR
+                            OU AU LAIT? CE QUE REPRÉSENTE LA CONSOMMATION DU CHOCOLAT, EN CHIFFRES, À TRAVERS LE
+                            MONDE</a></cite>
+                </blockquote>
+                <p class="p__margin">La consommation de chocolat au Québec est très populaire, avec une préférence marquée pour les produits de qualité artisanale. Les Québécois savourent le chocolat sous diverses formes, des barres aux pâtisseries, en passant par les boissons chaudes. Les chocolatiers locaux, réputés pour leur savoir-faire, jouent un rôle clé dans cette passion culinaire. Les événements dédiés au chocolat, comme le Salon du Chocolat de Québec, attirent de nombreux amateurs chaque année.</p>
+                <p class="p__margin">Source : <a href="https://www.statcan.gc.ca/o1/fr/plus/1345-des-donnees-se-mettre-sous-la-dent-lamour-du-canada-pour-le-chocolat"> StatCan</a></p>
+                </div>
         </section>
 
         <section id="realisation">
             <h2>Pourcentage de réalisation de la recette</h2>
             <div id="chart-container3"></div>
+            <div>
+                <ul class="pourcentage" >
+                    <li><img src="./assets/img/25.png" alt=""><p>Préchauffer le four</p></li>
+                    <li><img src="./assets/img/50.png" alt=""><p>Préparer vos ingrédients</p></li>
+                    <li><img src="./assets/img/75.png" alt=""><p>Suivre les étapes de préparation</p></li>
+                    <li><img src="./assets/img/100.png" alt=""><p>Mettre le dessert au four</p></li>
+                    <li><img src="./assets/img/meal.png" alt=""><p>Manger le délicieux dessert au chocolat</p></li>
+                </ul>
+            </div>
         </section>
 
-        <section id="consommation">
-            <h2>Consommation de chocolat au Canada</h2>
+        <section id="composition">
+            <h2>Composition de différents chocolats</h2>
             <div>
-                <canvas id="cvs-line" width="500" height="300">[No canvas support]</canvas>
+                <canvas id="cvs2" width="500" height="300">[No canvas support]</canvas>
+            </div>
+            <div>
+                <h3 class="p__margin">Légende :</h3>
+                <ul>
+                    <li>
+                        <div class="carre darkBrown"></div>
+                        <p class="p__no-margin">Poucentage de grué</p>
+                    </li>
+                    <li>
+                        <div class="carre green"></div>
+                        <p class="p__no-margin">Pourcentage de sucre</p>
+                    </li>
+                    <li>
+                        <div class="carre lightBrown"></div>
+                        <p class="p__no-margin">Pourcentage de beurre de cacao</p>
+                    </li>
+                </ul>
+                <p class="p__margin">La composition du chocolat noir est réglementée. L’appellation « chocolat noir » impose au minimum 43 % de matière sèche totale de cacao des meilleures origines (grué + beurre de cacao), dont au moins 26 % de beurre de cacao. Pour l’anecdote, avant les années 1980, ce type de chocolat noir à 43 % était traditionnellement utilisé pour le goûter des enfants.
+                Le chocolat noir de couverture, idéal pour les professionnels pâtissiers, doit quant à lui contenir au moins 16 % de cacao sec dégraissé.</p>
+                <p class="p__margin">Soucre : <a href="https://www.valrhona.com/fr-FR/l-ecole-valrhona/decouvrir-l-ecole-valrhona/lexique-du-chocolat/chocolat-noir">Valhrona</a></p>
             </div>
         </section>
 
